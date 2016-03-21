@@ -16,7 +16,12 @@ DOCKER_HOST = os.getenv('DOCKER_HOST', 'unix:///var/run/docker.sock')
 def startContainer():
          client = DockerClientWrapper('unix://var/run/docker.sock')
          client.start('aadebuger/lightingthrift', expose={9092: 9090})
-         
+def startContainer1():
+        cli = Client(base_url=DOCKER_HOST)
+        cli.containers()
+#        container = cli.create_container(image='aadebuger/lightingthrift')
+        
+#         client.start('aadebuger/lightingthrift', expose={9092: 9090})         
     
 if __name__ == '__main__':
      startContainer()
