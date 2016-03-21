@@ -18,7 +18,8 @@ def startContainer():
          client.start('aadebuger/lightingthrift', expose={9092: 9090})
 def startContainer1():
         cli = Client(base_url=DOCKER_HOST)
-        cli.containers()
+        print('container=',cli.containers())
+        
 #        container = cli.create_container(image='aadebuger/lightingthrift')
         
 #         client.start('aadebuger/lightingthrift', expose={9092: 9090})         
