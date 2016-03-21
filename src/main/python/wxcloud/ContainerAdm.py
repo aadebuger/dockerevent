@@ -24,4 +24,4 @@ def startContainer1():
 #         client.start('aadebuger/lightingthrift', expose={9092: 9090})         
     
 if __name__ == '__main__':
-     startContainer()
+     startContainer1()
