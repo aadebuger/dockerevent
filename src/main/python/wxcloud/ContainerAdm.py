@@ -34,7 +34,7 @@ def startContainer1():
 
 def subscriber(sender):
      print("Got a signal sent by %r" % sender)
-
+     startContainer1()
      
 if __name__ == '__main__':
      startContainer1()
