@@ -15,7 +15,7 @@ def f(event, data):
     containersignal.containerdestroy.send(event)
 
 def startAhab():
-
+    pass
 
 if __name__ == '__main__':
     ahab = Ahab(handlers=[f])
