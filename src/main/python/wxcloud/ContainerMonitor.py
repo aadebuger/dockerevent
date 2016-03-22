@@ -6,7 +6,11 @@ Created on Mar 21, 2016
 
 from ahab import Ahab
 import containersignal
+import ContainerAdm
 
+def subConfig():
+    
+    containersignal.containerdestroy.connect(ContainerAdm.subscriber)
 def f(event, data):
 #    print 'event=',event
     print("status",event['status'],'from',event['from'])
@@ -22,6 +26,7 @@ def startAhab():
     pass
 
 if __name__ == '__main__':
+    subConfig()
     ahab = Ahab(handlers=[f])
     print 'listen'
     ahab.listen()
