@@ -15,6 +15,7 @@ def f(event, data):
     if event['status']=='kill':
         print 'State',data['State']
         print 'Config',data['Config']
+        print 'Name',data['Name']
         containersignal.containerdestroy.send(event)
 
 def startAhab():
