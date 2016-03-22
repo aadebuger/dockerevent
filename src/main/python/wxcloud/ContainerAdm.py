@@ -8,10 +8,13 @@ from docker import Client
 from datetime import datetime
 import os
 import socket
+
 from dockermap.api import ContainerMap
 from dockermap.api import DockerClientWrapper, DockerFile
 
 DOCKER_HOST = os.getenv('DOCKER_HOST', 'unix:///var/run/docker.sock')
+
+
 
 def startContainer():
          client = DockerClientWrapper('unix://var/run/docker.sock')
@@ -28,6 +31,10 @@ def startContainer1():
     }))
         cli.start(container)
 #         client.start('aadebuger/lightingthrift', expose={9092: 9090})         
-    
+
+def subscriber(sender):
+     print("Got a signal sent by %r" % sender)
+
+     
 if __name__ == '__main__':
      startContainer1()
