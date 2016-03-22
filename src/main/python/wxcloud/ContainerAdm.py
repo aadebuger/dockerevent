@@ -20,6 +20,8 @@ def startContainer1():
         cli = Client(base_url=DOCKER_HOST)
         print('container=',cli.containers())
         
+        cli.stop("lighting1")
+        cli.remove_container("lighting1")
         container = cli.create_container(image='aadebuger/lightingserver',name="lighting1",ports=[9090],
     host_config=cli.create_host_config(port_bindings={
         9090: 9093
