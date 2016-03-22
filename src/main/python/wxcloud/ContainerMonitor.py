@@ -12,7 +12,9 @@ def f(event, data):
     print("status",event['status'],'from',event['from'])
     print 'data=',data
 #    pass        # Handle the Docker event (and extended info, as available)
-    containersignal.containerdestroy.send(event)
+    if event['status']=='kill':
+        print 'State',event['State']
+        containersignal.containerdestroy.send(event)
 
 def startAhab():
     pass
